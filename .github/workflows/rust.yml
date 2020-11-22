@@ -31,10 +31,13 @@ jobs:
            --tag $tag \
            --target x86_64-unknown-linux-musl
     - name: Build
-      run: cross build --release --target armv7-unknown-linux-musleabihf
+      run: cross build --release --target aarch64-linux-android
+      # run: cross build --release --target armv7-unknown-linux-musleabihf 
     - name: Archive production artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: languageclient-armv7-unknown-linux-musleabihf
+        name: languageclient-
+        # name: languageclient-armv7-unknown-linux-musleabihf
         path: |
             target/armv7-unknown-linux-musleabihf/release/languageclient*
+            target/aarch64-linux-android/release/languageclient*
