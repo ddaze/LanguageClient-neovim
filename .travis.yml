@@ -14,11 +14,8 @@ env:
 matrix:
   include:
     # Linux
-    - env: TARGETS=i686-unknown-linux-musl:x86_64-unknown-linux-musl:aarch64-unknown-linux-musl:x86_64-pc-windows-gnu
+    - env: TARGETS=i686-unknown-linux-musl:x86_64-unknown-linux-musl:aarch64-unknown-linux-musl:armv7-unknown-linux-musleabihf
 
-    # OSX
-    - env: TARGETS=x86_64-apple-darwin
-      os: osx
 
 if: tag IS present
 
