@@ -29,6 +29,6 @@ jobs:
            --force \
            --git japaric/cross \
            --tag $tag \
-           --target $target
+           --target x86_64-unknown-linux-musl
     - name: Build
       run: cross build --release --target armv7-unknown-linux-musleabihf
