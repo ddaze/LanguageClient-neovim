@@ -32,3 +32,10 @@ jobs:
            --target x86_64-unknown-linux-musl
     - name: Build
       run: cross build --release --target armv7-unknown-linux-musleabihf
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: dist-without-markdown
+        path: |
+            target/armv7-unknown-linux-musleabihf/release
+            !dist/**/*.md
